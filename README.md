@@ -131,5 +131,4 @@ This project is proprietary. All rights reserved.
 
 **Start your professional journey with InterPal today!** 🚀
 
-*From Preparation To Success - InterPal is your comprehensive career companion.*
 *Build with ❤️ and ⚡️ by @VanshBhatt*
